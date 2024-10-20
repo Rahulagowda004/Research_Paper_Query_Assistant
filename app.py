@@ -16,14 +16,15 @@ groq_api_key = os.getenv('GROQ_API_KEY')
 
 llm = ChatGroq(api_key = groq_api_key, model_name = "Llama3-8b-8192") # ChatGroq is a wrapper around the GROQ API
 
-prompt = ChatPromptTemplate(
+prompt=ChatPromptTemplate.from_template(
     """
-    Answer the question based on the provided context only.
-    Please provide the most accurate response based on the question 
+    Answer the questions based on the provided context only.
+    Please provide the most accurate respone based on the question
     <context>
     {context}
     <context>
     Question:{input}
+
     """
 )
 
@@ -31,7 +32,7 @@ def create_vector_embeddings():
     if "vectors" not in st.session_state:
         st.session_state.embeddings = OllamaEmbeddings()
         st.session_state.loader = PyPDFDirectoryLoader("Data") ##data ingestion
-        st.session_state.docs = st.session.loader.load() #document loading
+        st.session_state.docs = st.session_state.loader.load() #document loading
         st.session_state.text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1000,chunk_overlap = 200) #chunking
         st.session_state.final_documents = st.session_state.text_splitter.split_documents(st.session_state.docs[:50]) #text splitting
         st.session_state.vectors = FAISS.from_documents(st.session_state.final_documents, st.session_state.embeddings) #vector embeddings
