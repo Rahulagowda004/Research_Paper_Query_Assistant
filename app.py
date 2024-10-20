@@ -19,15 +19,14 @@ llm = ChatGroq(api_key = groq_api_key, model_name = "Llama3-8b-8192") # ChatGroq
 
 embeddings=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
-prompt=ChatPromptTemplate.from_template(
+prompt = ChatPromptTemplate.from_template(
     """
     Answer the questions based on the provided context only.
-    Please provide the most accurate respone based on the question
+    Please provide the most accurate response based on the question
     <context>
-    {context}
+    {{context}}
     <context>
-    Question:{input}
-
+    Question:{{input}}
     """
 )
 

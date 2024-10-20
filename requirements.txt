@@ -5,3 +5,5 @@ lanchain_community
 langchain_core
 python-dotenv
 langchain_huggingface
+pypdf
+faiss-cpu
