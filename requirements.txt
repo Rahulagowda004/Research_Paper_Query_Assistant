@@ -1,5 +1,5 @@
 streamlit
+langchain
 langchain_groq
 lanchain_community
-langchain
 langchain_core
