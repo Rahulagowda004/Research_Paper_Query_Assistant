@@ -110,16 +110,3 @@ Contributions are welcome! Feel free to:
 - Share your feedback 💡  
 
 ---
-
-## 📧 Contact  
-
-For any queries or feedback, reach out to:  
-**Rahulagowda004** | [GitHub Profile](https://github.com/Rahulagowda004)  
-
----
-
-Enjoy using the **📄 Retrieval-Augmented Generation Bot**! 🎉  
-
---- 
-
-Let me know if you'd like any changes!
